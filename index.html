@@ -17,10 +17,10 @@
         <div class="front flap"></div>
         <div class="front pocket"></div>
         <div class="letter">
-          <div class="words line1">To: Crush</div>
-          <div class="words line2">Dear crush, you are so beautiful</div>
-          <div class="words line3">That every time i see you</div>
-          <div class="words line4">my world stops,</div>
+          <div class="words line1">To Vishu <3</div>
+          <div class="words line2">Happy Valentine's day</div>
+          <div class="words line3">I love you</div>
+          <div class="words line4">till death and beyond</div>
         </div>
         <div class="hearts">
           <div class="heart a1"></div>
@@ -38,3 +38,29 @@
     <script src="love letter 2.js"></script>
   </body>
 </html>
+
+<style>
+@keyframes floating {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+.heart {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    font-size: 2em;
+    animation: floating 5s infinite;
+}
+</style>
+<script>
+function createHeart() {
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+}
+setInterval(createHeart, 500);
+</script>
